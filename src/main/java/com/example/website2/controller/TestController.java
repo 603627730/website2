@@ -33,7 +33,8 @@ public class TestController {
         System.out.println(result.getTotal());
         rocketMQTemplate.syncSend("TopicTest", MessageBuilder.withPayload(result.getRecords().get(1)).build());
 //        rocketMQTemplate
-        return result + "java111222333";
+        result.setCurrent(10);
+        return result;
     }
     @GetMapping("/a")
     public String add(){
