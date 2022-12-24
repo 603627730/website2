@@ -39,6 +39,6 @@ public class TestController {
     public String add(){
         LiBrand liBrand = new LiBrand();
         liBrandService.save(liBrand);
-        return liBrand.toString();
+        return liBrand.toString() + "321";
     }
 }
