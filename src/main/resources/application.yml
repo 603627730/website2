@@ -1,0 +1,20 @@
+spring:
+  mvc:
+    pathmatch:
+      # 配置策略
+      matching-strategy: ant-path-matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.235/lilishop
+    username: root
+    password: lilishop
+
+server:
+  port: 8088
+
+rocketmq:
+  name-server: 192.168.31.235:9876
+  isVIPChannel: false
+  producer:
+    group: lili_group
+    send-message-timeout: 30000

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website2.generator.mapper.LiBrandMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.website2.generator.domain.LiBrand">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="deleteFlag" column="delete_flag" jdbcType="BIT"/>
+            <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="logo" column="logo" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,create_by,create_time,
+        delete_flag,update_by,update_time,
+        logo,name
+    </sql>
+    <update id="updateNameBy">
+        update li_brand
+        set logo = "999"
+        where name = #{name};
+    </update>
+    <select id="selectTest" resultType="com.example.website2.generator.domain.LiBrand">
+        select * from li_brand
+    </select>
+</mapper>
